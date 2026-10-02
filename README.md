@@ -1,6 +1,17 @@
 <div align="center">
 
-<!-- BANNER ANIMADO -->
+<!-- BANNER PIXELADO -->
+<a href="https://github.com/daridjcm">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+    <img src="assets/banner-light.svg" width="960" alt="Perfil de Dariana Correa, desarrolladora de software">
+  </picture>
+</a>
+
+<br>
+
+<!-- TEXTO ANIMADO -->
 <a href="https://github.com/daridjcm">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=700&amp;size=26&amp;duration=2600&amp;pause=900&amp;color=8B8CF7&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Dariana+Correa+%E2%80%94+Desarrolladora+de+Software;Estudiante+de+Ingenier%C3%ADa+de+Sistemas;Frontend+%E2%80%A2+UX%2FUI+%E2%80%A2+Aplicaciones+web;Creatividad+%2B+L%C3%B3gica+%3D+Experiencias+digitales" alt="Banner animado con el perfil de Dariana Correa">
 </a>
@@ -14,17 +25,6 @@
 ---
 
 ## `$ whoami`
-
-```yaml
-name:       Dariana Correa Medina
-role:       Desarrolladora de Software
-studying:   Ingeniería de Sistemas @ Universidad del Magdalena
-background: Técnica en Elaboración de Audiovisuales (SENA) · Especialización UI/UX (CalArts)
-location:   Santa Marta, Magdalena, Colombia 🇨🇴
-focus:      Diseño y maquetación web · Aplicaciones web · UX/UI
-motto:      "El software debe ser intuitivo, eficiente y centrado en el usuario"
-status:     abierta a nuevos proyectos y oportunidades
-```
 
 Estudiante de Ingeniería de Sistemas apasionada por la tecnología y el desarrollo de software. Creo que combinar mi formación creativa (audiovisual y diseño) con el pensamiento lógico me permite construir experiencias digitales **funcionales, visualmente atractivas y orientadas al usuario**.
 
