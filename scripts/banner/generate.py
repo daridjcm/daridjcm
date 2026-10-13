@@ -24,27 +24,25 @@ USER = "daridjcm"
 BACKGROUND = (168, 132, 198)  # morado liso del avatar de GitHub
 
 YAML_ROWS = [
-    (0, "profile", ""),
-    (1, "subject", "Dariana Correa"),
-    (1, "role", "Desarrolladora de Software"),
-    (1, "origin", "Santa Marta, Colombia"),
-    (1, "studying", "Ingeniería de Sistemas · Unimagdalena"),
-    (1, "focus", "Frontend · UX/UI · Web Apps"),
-    (0, "stack", ""),
-    (1, "frontend", "HTML · CSS · Tailwind · JavaScript"),
-    (1, "frameworks", "React · Astro · TypeScript"),
-    (1, "database", "MySQL · MariaDB"),
-    (1, "tooling", "Git · Bun · Vite · Linux"),
-    (1, "design", "Figma · Wireframes · Prototipos"),
-    (0, "projects", ""),
-    (1, "stylishoes", "tienda de zapatos con estilo"),
-    (1, "lifesim", "simulador de vida (en desarrollo)"),
-    (0, "contact", ""),
-    (1, "portfolio", "daridjcm.vercel.app"),
+    (0, "perfil", ""),
+    (1, "yo", "Dariana Correa"),
+    (1, "rol", "Desarrolladora de Software"),
+    (1, "enfocada en", "Full-Stack"),
+    (1, "ubicada en", "Santa Marta, Colombia"),
+    (1, "estudiando", "Ingeniería de Sistemas · Unimagdalena"),
+    (0, "tech - stack", ""),
+    (1, "lenguajes", "HTML · CSS · TypeScript · JavaScript · Java"),
+    (1, "frameworks", "React · Astro · Tailwind · Sass · Express · Spring"),
+    (1, "bases de datos", "MySQL · MariaDB"),
+    (1, "complementarios", "Git · Ubuntu · Bash · C++"),
+    (1, "diseño", "Wireframes · Prototipos · Estrategia y arquitectura de información"),
+    (0, "contacto", ""),
+    (1, "portafolio", "daridjcm.vercel.app"),
     (1, "linkedin", "/in/daridjcm"),
     (1, "github", USER),
 ]
 
+# Paleta de temas y tipografía del banner.
 THEMES = {
     "dark": dict(bg="#0F0F1E", panel="#14142A", panel2="#191933", line="#2D2D55",
                  muted="#8A8AB0", text="#EDEBFF", portrait="#A9AAFF",
@@ -55,9 +53,8 @@ THEMES = {
 }
 MONO = "ui-monospace,SFMono-Regular,Consolas,monospace"
 
-
+# Convierte la imagen a 1 bit para simular un retrato pixelado.
 def floyd_steinberg(gray: np.ndarray) -> np.ndarray:
-    """Difusión de error Floyd-Steinberg serpenteante en 1 bit (True = claro)."""
     work = gray.astype(np.float32) / 255.0
     out = np.zeros_like(work, dtype=bool)
     h, w = work.shape
@@ -98,17 +95,12 @@ def _flood(allowed: np.ndarray, seeds) -> np.ndarray:
 
 
 def figure_mask(rgb: np.ndarray) -> np.ndarray:
-    """Separa a la persona del fondo del avatar (morado liso + borde blanco + corazón).
-
-    Si cambias el avatar por otro con fondo distinto, ajusta BACKGROUND.
-    """
     a = rgb.astype(np.float32)
     h, w = a.shape[:2]
     bg_like = (np.linalg.norm(a - np.array(BACKGROUND, dtype=np.float32), axis=2) < 38) | (a.min(axis=2) > 235)
     seeds = [(0, x) for x in range(w)] + [(h - 1, x) for x in range(w)]
     seeds += [(y, 0) for y in range(h)] + [(y, w - 1) for y in range(h)]
     fg = ~_flood(bg_like, seeds)
-    # Nos quedamos con el componente más grande (descarta el corazón y motas sueltas).
     best = np.zeros_like(fg)
     remaining = fg.copy()
     for sy, sx in zip(*np.where(fg)):
@@ -139,7 +131,6 @@ def portrait_points(theme: str) -> np.ndarray:
         g = ImageEnhance.Contrast(g).enhance(1.15)
         g = ImageEnhance.Brightness(g).enhance(1.15)
     else:
-        # Fondo oscuro: se encienden las zonas claras; se levanta la sombra del pelo.
         g = g.point(lambda v: int(255 * (v / 255) ** 0.6))
         g = ImageEnhance.Contrast(g).enhance(1.2)
     g = g.filter(ImageFilter.UnsharpMask(radius=2.0, percent=150, threshold=1))
@@ -168,7 +159,7 @@ def render(theme: str, pts: np.ndarray, rng: np.random.Generator) -> str:
     p: list[str] = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">',
         '<title id="title">Perfil de Dariana Correa</title>',
-        '<desc id="desc">Perfil animado en formato terminal con un retrato pixelado y los datos de Dariana Correa, desarrolladora de software.</desc>',
+        '<desc id="desc">Perfil animado en formato terminal con un retrato pixelado y  datos de Dariana Correa, desarrolladora de software.</desc>',
         "<defs>",
         f'<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="{t["shadow"]}" flood-opacity=".28"/></filter>',
         '<clipPath id="reveal"><rect x="49" y="124" width="390" height="414" rx="3">'
@@ -185,8 +176,6 @@ def render(theme: str, pts: np.ndarray, rng: np.random.Generator) -> str:
         f'<text x="49" y="111" fill="{t["chrome"]}" font-family="{MONO}" font-size="13" font-weight="700" letter-spacing="1.2">VISUAL.MAP</text>',
         f'<text x="438" y="111" text-anchor="end" fill="{t["muted"]}" font-family="{MONO}" font-size="11">300×340 / 1-BIT</text>',
         f'<path d="M49 141h12M49 141v12M439 141h-12M439 141v12M49 539h12M49 539v-12M439 539h-12M439 539v-12" fill="none" stroke="{t["chrome"]}" opacity=".55"/>',
-        # El retrato se revela de arriba hacia abajo. El atributo height final
-        # deja el cuadro completo en visores que no soportan animación.
         '<g clip-path="url(#reveal)" shape-rendering="crispEdges">',
     ]
     # Bandas con parpadeo suave para dar vida al retrato
