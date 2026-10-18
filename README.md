@@ -26,7 +26,7 @@
 
 ## `$ whoami`
 
-Estudiante de Ingeniería de Sistemas apasionada por la tecnología y el desarrollo de software. Creo que combinar mi formación creativa (audiovisual y diseño) con el pensamiento lógico me permite construir experiencias digitales **funcionales, visualmente atractivas y orientadas al usuario**.
+Univ. Ingeniería de Sistemas apasionada por la tecnología y el desarrollo de software. Creo que combinar mi formación creativa (audiovisual y diseño) con el pensamiento lógico me permite construir experiencias digitales **funcionales, visualmente atractivas y orientadas al usuario**.
 
 <p align="center">
   <a href="https://daridjcm.vercel.app/">
@@ -53,7 +53,7 @@ Estudiante de Ingeniería de Sistemas apasionada por la tecnología y el desarro
     <tr>
       <td width="50%" valign="top"><code>├─ ✦ frontend:</code><br><br>
         <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,express,astro,tailwind,sass,spring" alt="HTML, CSS, JavaScript, TypeScript, React, Express, Astro, Tailwind, Sass y Spring"><br>
-        <sub><code>HTML · CSS · JavaScript · TypeScript · React · Astro · Express · Tailwind · Sass · Spring</code></sub>
+        <sub><code>JavaScript · TypeScript · React · Astro · Express · Tailwind · Sass · Spring</code></sub>
       </td>
       <td width="50%" valign="top"><code>├─ ▣ bases de datos:</code><br><br>
         <img src="https://skillicons.dev/icons?i=mysql,mariadb" alt="MySQL y MariaDB"><br>
@@ -89,10 +89,7 @@ Estudiante de Ingeniería de Sistemas apasionada por la tecnología y el desarro
 | --- | --- | --- | --- |
 | [**StyliShoes**](https://github.com/daridjcm/stylishoes) | Tienda para comprar y vender zapatos con estilo: muestra la marca, productos y carrito, y permite añadir productos a la colección. | `HTML` `CSS` `JavaScript` `MySQL/MariaDB` | ✅ Finalizado (solo funciona local) |
 | [**LifeSIM**](https://github.com/daridjcm/lifesim-v2) | Simulador del comportamiento de la vida humana mediante eventos e interacciones. | `React` `Tailwind CSS` `MariaDB` `Express` | 🚧 En desarrollo |
-| [**Deyla Shop**](https://deyla-shop.vercel.app/) | Catálogo de productos (muebles, comidas, perfumes) con detalle de producto y carrito de compra. | `Astro` `Tailwind CSS` `React` | ✅ Finalizado |
 | [**Todo List App**](https://notes-list-app.vercel.app/) | App para recordar tareas simples de forma rápida, con un diseño centrado en la simplicidad. | `React` `Tailwind CSS` | ✅ Finalizado |
-| [**¿Qué tiempo es hoy?**](https://daridjcm.github.io/clima/) | Aplicación web del clima con información meteorológica en tiempo real. | `HTML` `CSS` `JavaScript` `Vite` | ✅ Finalizado |
-
 ---
 
 ## `$ git log --career`
@@ -143,5 +140,5 @@ Estudiante de Ingeniería de Sistemas apasionada por la tecnología y el desarro
 <br>
 
 <div align="center">
-  <sub>Hecho con 💜 y mucha curiosidad desde Santa Marta, Colombia · @daridjcm</sub>
+  <p>Hecho con 💜 y mucha curiosidad desde Santa Marta, Colombia · @daridjcm</p>
 </div>
