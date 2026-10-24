@@ -90,6 +90,8 @@ Univ. Ingeniería de Sistemas apasionada por la tecnología y el desarrollo de s
 | [**StyliShoes**](https://github.com/daridjcm/stylishoes) | Tienda para comprar y vender zapatos con estilo: muestra la marca, productos y carrito, y permite añadir productos a la colección. | `HTML` `CSS` `JavaScript` `MySQL/MariaDB` | ✅ Finalizado (solo funciona local) |
 | [**LifeSIM**](https://github.com/daridjcm/lifesim-v2) | Simulador del comportamiento de la vida humana mediante eventos e interacciones. | `React` `Tailwind CSS` `MariaDB` `Express` | 🚧 En desarrollo |
 | [**Todo List App**](https://notes-list-app.vercel.app/) | App para recordar tareas simples de forma rápida, con un diseño centrado en la simplicidad. | `React` `Tailwind CSS` | ✅ Finalizado |
+| [**Tributum Landing Page**](https://tributum-landing.vercel.app) | Tributum es una plataforma colombiana diseñada para trabajadores independientes (freelancers, emprendedores, desarrolladores, contadores y asesores) que automatiza y respalda la gestión de gastos deducibles y obligaciones tributarias. | `HTML` `Tailwind CSS` | ✅ Finalizado |
+
 ---
 
 ## `$ git log --career`
